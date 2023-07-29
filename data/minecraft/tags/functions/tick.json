@@ -1,0 +1,8 @@
+{
+	"replace": false,
+	"values": [
+		"tb:tick",
+		"tb:kill",
+		"tb:check_if_dead"
+	]
+}

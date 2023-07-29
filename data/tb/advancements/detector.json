@@ -1,0 +1,13 @@
+{
+  "criteria": {
+    "example": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "tb:taboo_block_detector"
+      }
+    }
+  },
+  "rewards":{
+		"function": "tb:detector"
+	}
+}
