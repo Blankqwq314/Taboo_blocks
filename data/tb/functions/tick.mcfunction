@@ -6,14 +6,14 @@ function tb:kill_end
 tag @a remove dead
 gamerule showDeathMessages true
 kill @e[type=minecraft:item,sort=nearest,nbt={Item:{id:"minecraft:barrier"}}]
-execute if entity @p[nbt={Inventory:[{Slot:-106b,id:"minecraft:knowledge_book",tag:{Tags:["detector"]}}]}] run function tb:detect
-execute if entity @p[nbt={SelectedItem:{tag:{Tags:["detector"]}}}] run function tb:detect
+execute as @a[nbt={Inventory:[{Slot:-106b,id:"minecraft:knowledge_book",tag:{Tags:["detector"]}}]}] at @s run function tb:detect
+execute as @a[nbt={SelectedItem:{tag:{Tags:["detector"]}}}] at @s run function tb:detect
 
-execute if score @p sneak_to_tellraw matches 1 run scoreboard players add @p[nbt={SelectedItem:{tag:{Tags:["detector"]}}}] selected_dimension 1
-execute if score @p selected_dimension matches 61 run scoreboard players set @p selected_dimension 0
-execute if score @p selected_dimension >= t1 t1 run scoreboard players set @p selected_dimension 0
-execute if score @p sneak_to_tellraw matches 1 run scoreboard players add @p[nbt={Inventory:[{Slot:-106b,id:"minecraft:knowledge_book",tag:{Tags:["detector"]}}]}] selected_dimension 1
-execute if score @p sneak_to_tellraw matches 1 run scoreboard players set @p sneak_to_tellraw 0
+execute as @a[scores={sneak_to_tellraw=1..}] run scoreboard players add @s[nbt={SelectedItem:{tag:{Tags:["detector"]}}}] selected_dimension 1
+execute as @a[scores={sneak_to_tellraw=1..}] run scoreboard players add @s[nbt={Inventory:[{Slot:-106b,id:"minecraft:knowledge_book",tag:{Tags:["detector"]}}]}] selected_dimension 1
+execute as @a[scores={selected_dimension=60..}] run scoreboard players set @s selected_dimension 0
+execute as @s[scores={sneak_to_tellraw=1..}] run scoreboard players add @e[type=player,nbt={Inventory:[{Slot:-106b,id:"minecraft:knowledge_book",tag:{Tags:["detector"]}}]}] selected_dimension 1
+execute as @a[scores={sneak_to_tellraw=1..}] run scoreboard players set @s sneak_to_tellraw 0
 execute if score random tellraw_randomly matches 10 run scoreboard players reset random tellraw_randomly
 execute if score load loadtime matches 1200 run function tb:random_1
 execute if score load loadtime matches 1200 run function tb:random_0
