@@ -1,0 +1,13 @@
+{
+  "criteria": {
+    "example": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "tb:impossible1"
+      }
+    }
+  },
+  "rewards":{
+		"function": "tb:detector1"
+	}
+}

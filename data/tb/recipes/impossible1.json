@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": {
+      "item": "minecraft:command_block"
+    },
+    "R": {
+      "tag": "minecraft:planks"
+    }
+  },
+  "pattern": [
+    " R ",
+    "RGR",
+    " R "
+  ],
+  "result": {
+    "item": "minecraft:bedrock"
+  },
+  "show_notification": false
+}
